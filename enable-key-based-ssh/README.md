@@ -9,7 +9,7 @@ Enable key based ssh authentication using the `key-based-ssh.sh` customization s
 
 - Update the following cluster creation template to point to the customization script, public ssh key, COS-S3 authentication end-point and your COS-S3 authentication details(auth_key and secret_access_key) 
 
-	#### Template of create cluster with key based ssh authentication.
+	#### Template to create cluster with key based ssh authentication enabled
 	```
 	{
 		"num_compute_nodes": 1,
