@@ -1,5 +1,7 @@
 #!/bin/sh
 #This script download the publickey from the object store and establish a key based ssh across the nodes.
+set -e #Exit immediately if a command exits with a non-zero status.
+set -u #Treat unset variables as an error when substituting.
 authEndpoint=$1
 COS_SECRET_KEY=$2
 COS_ACCESS_KEY=$3
@@ -124,4 +126,7 @@ if [ "x$NODE_TYPE" == "xmanagement-slave2" ]; then
             fi
         fi
     sshAcrossNodes
+    rm -f /tmp/key_based.exp 
+    rm -f /tmp/key_based.exp1
+    rm -f /tmp/ops_key
 fi
